@@ -27,20 +27,15 @@ IdentityFile ~/it-management/users/zv/id_rsa
 ~/url_shortener/di/dev/url_shortener/systemd.log.sh
 ~/url_shortener/di/dev/url_shortener/systemd.sh
 ~/url_shortener/di/dev/url_shortener/deploy.sh
-
 ```
 
 #### After deploy to `dev` following REST API is availalbe
 
-```
+```bash
 curl 'https://u2h.ru/dev/url_shortener_back/about' 
-
 curl -i -w "\n" -X POST 'https://u2h.ru/dev/url_shortener_back/shorten' -H 'Content-Type: application/json' -d '{ "url": "https://github.com/yurybikuzin/url_shortener" }' 
-
 curl -i -w "\n" 'https://u2h.ru/dev/N:FY5' 
-
 curl -i -w "\n" 'https://u2h.ru/dev/url_shortener_back/stat/N:FY5' 
-
 ```
 
 - [https://u2h.ru/dev/url_shortener_back/about](https://u2h.ru/dev/url_shortener_back/about)
@@ -57,20 +52,15 @@ curl -i -w "\n" 'https://u2h.ru/dev/url_shortener_back/stat/N:FY5'
 ~/url_shortener/di/prod/url_shortener/systemd.log.sh
 ~/url_shortener/di/prod/url_shortener/systemd.sh
 ~/url_shortener/di/prod/url_shortener/deploy.sh
-
 ```
 
 #### After deploy to `prod` following REST API is availalbe
 
-```
+```bash
 curl 'https://u2h.ru/url_shortener_back/about' 
-
 curl -i -w "\n" -X POST 'https://u2h.ru/url_shortener_back/shorten' -H 'Content-Type: application/json' -d '{ "url": "https://github.com/yurybikuzin/url_shortener" }' 
-
 curl -i -w "\n" 'https://u2h.ru/N:FY5' 
-
 curl -i -w "\n" 'https://u2h.ru/url_shortener_back/stat/N:FY5' 
-
 ```
 
 - [https://u2h.ru/url_shortener_back/about](https://u2h.ru/url_shortener_back/about)
