@@ -80,13 +80,11 @@ pub fn resolve_sync(res: ResolveResult, tx: TxHandle) -> Result<()> {
 pub type StatResult = Result<Option<Shortened>>;
 pub async fn stat(payload: stat::Payload) -> StatResult {
     // TODO: save resolution to persistent storage
-    Ok(
-        if let Some(ret) = SHORTENED.write().unwrap().get_mut(&payload.shortened) {
-            Some(ret.clone())
-        } else {
-            None
-        },
-    )
+    Ok(SHORTENED
+        .write()
+        .unwrap()
+        .get_mut(&payload.shortened)
+        .map(|ret| ret.clone()))
 }
 
 pub fn stat_sync(res: StatResult, tx: TxHandle) -> Result<()> {
