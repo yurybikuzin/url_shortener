@@ -73,7 +73,7 @@ curl -i -w "\n" 'https://u2h.ru/url_shortener_back/stat/N:FY5'
 
 ```
 
-- [https://u2h.ru/url_shortener_back/about](https://u2h.ru/dev/url_shortener_back/about)
+- [https://u2h.ru/url_shortener_back/about](https://u2h.ru/url_shortener_back/about)
 
 - [https://u2h.ru/N:FY5](https://u2h.ru/N:FY5)
 
