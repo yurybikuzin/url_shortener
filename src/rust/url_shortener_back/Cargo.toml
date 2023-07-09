@@ -1,0 +1,58 @@
+#cargo-features = ["edition2021"]
+
+[package]
+name = "url_shortener_back"
+version = "0.1.2"
+# 0.1.0 - initial
+edition = "2021"
+
+# https://docs.rs/built/0.5.1/built/index.html
+build = "build.rs"
+
+[build-dependencies]
+built = "0.6"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+log = "0.4"
+anyhow = "1"
+tokio = { version = "1", features = ["full"] }
+dotenv = "0.15"
+pretty_env_logger = "0.5"
+structopt = { version = "0.3" }
+futures = { version = "0.3" }
+# openssl = { version = "0.10", features = ["vendored"] }
+lazy_static = "1"
+# regex = "1"
+strum = { version = "0.25", features = ["derive"] }
+# itertools = "0.11"
+paste = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+serde_with = { version = "3", features = [ "macros", "chrono_0_4" ] }
+chrono = "0.4"
+op_mode = { path = "../op_mode" }
+common_macros = { path = "../common_macros" }
+arrange_millis = { path = "../arrange_millis" }
+config = "0.13"
+actix-web = "4"
+# warp = "0.3.3"
+# hyper = "0.14"
+# thiserror = "1"
+# derive_more = { version = "0.99", features = ["full"] }
+derive_more = "0.99"
+# rand="0.8"
+# bytes="1"
+# bincode = "1"
+# flate2 = "1"
+# signal-hook = "0.3"
+# tokio-stream = "0.1"
+semver = "1"
+# chrono-tz = "0.8"
+crc32fast = "1"
+parquet = "43"
+
+
+# [dev-dependencies]
+# matches = "0.1"

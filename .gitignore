@@ -1,0 +1,12 @@
+_*
+~*
+*~
+*.DS_Store
+*.version
+*.gz
+*.csv
+target
+obsolete
+data
+node_modules
+Makefile

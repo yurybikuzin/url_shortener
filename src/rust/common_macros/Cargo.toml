@@ -1,0 +1,11 @@
+#cargo-features = ["edition2021"]
+
+[package]
+name = "common_macros"
+version = "0.1.0"
+# 0.1.0 - initial
+
+authors = ["Yury Bikuzin <yury.bikuzin@gmail.com>"]
+edition = "2021"
+
+[dependencies]

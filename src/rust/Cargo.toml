@@ -1,0 +1,8 @@
+[workspace]
+members = [
+    "arrange_millis",
+    "common_macros",
+    "op_mode",
+    "url_shortener_back",
+]
+
