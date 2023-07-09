@@ -1,6 +1,6 @@
-# url_shortener back
+# url_shortener 
 
-[Url shortener Rust implementation](src/rust/url_shortener_back/README.md)
+[Url shortener back Rust implementation](src/rust/url_shortener_back/README.md)
 
 
 
