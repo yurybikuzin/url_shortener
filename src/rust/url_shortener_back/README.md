@@ -1,5 +1,5 @@
 
-# Url shortener Rust implementation
+# Url shortener back Rust implementation
 
 ## Used crates 
 
