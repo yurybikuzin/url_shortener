@@ -38,7 +38,7 @@ curl -i -w "\n" 'https://u2h.ru/dev/N:FY5'
 curl -w "\n" 'https://u2h.ru/dev/url_shortener_back/stat/N:FY5' 
 ```
 
-- [https://u2h.ru/dev/url_shortener_back/about](https://u2h.ru/dev/url_shortener_back/about): should report op_mode(`prod`/`dev`/`demo`/`rc`), app_name and version
+- [https://u2h.ru/dev/url_shortener_back/about](https://u2h.ru/dev/url_shortener_back/about): should report **op_mode**(`prod`/`dev`/`demo`/`rc`), **app_name** and **version**
 
 - [https://u2h.ru/dev/N:FY5](https://u2h.ru/dev/N:FY5): should redirect to `https://github.com/yurybikuzin/url_shortener`
 
@@ -63,7 +63,7 @@ curl -i -w "\n" 'https://u2h.ru/N:FY5'
 curl -w "\n" 'https://u2h.ru/url_shortener_back/stat/N:FY5' 
 ```
 
-- [https://u2h.ru/url_shortener_back/about](https://u2h.ru/url_shortener_back/about): should report op_mode(`prod`/`dev`/`demo`/`rc`), app_name and version
+- [https://u2h.ru/url_shortener_back/about](https://u2h.ru/url_shortener_back/about): should report **op_mode**(`prod`/`dev`/`demo`/`rc`), **app_name** and **version**
 
 - [https://u2h.ru/N:FY5](https://u2h.ru/N:FY5): should redirect to `https://github.com/yurybikuzin/url_shortener`
 
