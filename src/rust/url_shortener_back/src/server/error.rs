@@ -1,6 +1,3 @@
-// use super::*;
-// use thiserror::Error;
-// use warp::http::StatusCode;
 use actix_web::{
     error::ResponseError,
     http::{header::ContentType, StatusCode},
@@ -8,9 +5,6 @@ use actix_web::{
 };
 use derive_more::Display;
 
-// #[derive(Error, Debug, strum::EnumDiscriminants)]
-// #[strum_discriminants(name(ErrorKind))]
-// #[derive(Debug, Display, derive_more::Error)]
 #[derive(Debug, Display)]
 pub enum ServerError {
     #[display(fmt = "$0")]

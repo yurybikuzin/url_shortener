@@ -6,7 +6,6 @@ use log::{debug, error, info, trace, warn};
 pub mod built_info {
     include!(concat!(env!("OUT_DIR"), "/built.rs"));
 }
-// use common_macros::pasitos;
 use serde::{Deserialize, Serialize};
 use structopt::StructOpt;
 
@@ -110,7 +109,6 @@ common_macros::declare_settings! {
 #[derive(Serialize, Deserialize, Debug)]
 pub struct SettingsData {
     pub max_at_once: usize,
-    // pub path: std::path::PathBuf,
 }
 
 #[derive(Debug, Clone, StructOpt)]
@@ -122,6 +120,3 @@ pub enum Command {
         op_mode: Option<op_mode::OpMode>,
     },
 }
-
-// ==================================================
-// ==================================================

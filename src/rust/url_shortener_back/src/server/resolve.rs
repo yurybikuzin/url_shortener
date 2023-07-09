@@ -3,7 +3,6 @@ use super::*;
 #[derive(Debug, Deserialize, Serialize)]
 pub struct Payload {
     pub ip: Option<IpAddr>,
-    // pub referer: Option<String>,
     pub shortened: String,
 }
 

@@ -6,7 +6,6 @@ pub mod resolve;
 pub mod shorten;
 pub mod stat;
 
-// use common_macros::pasitos;
 use error::*;
 use std::net::IpAddr;
 use std::str::FromStr;
