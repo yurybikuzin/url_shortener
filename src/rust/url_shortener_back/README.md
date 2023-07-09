@@ -51,7 +51,7 @@ curl -i -w "\n" 'https://u2h.ru/dev/url_shortener_back/stat/N:FY5'
 
 ```
 
-#### After deploy to `dev` following REST API is availalbe
+#### After deploy to `prod` following REST API is availalbe
 
 ```
 curl -i -w "\n" -X POST 'https://u2h.ru/url_shortener_back/shorten' -H 'Content-Type: application/json' -d '{ "url": "https://github.com/yurybikuzin/url_shortener" }' 
