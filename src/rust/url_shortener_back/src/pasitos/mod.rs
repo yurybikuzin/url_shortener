@@ -50,8 +50,8 @@ common_macros::pasitos!(fut_queue, run_for;
     }
 
     pasos data {
-        max_at_once: common_macros::settings!(data.max_at_once);
-
+        max_at_once: common_macros::settings!(data.max_at_once); // this limits access to expensive
+                                                                 // internal resources
         paso Shorten({
             tx: TxHandle,
             payload: server::shorten::Payload,
@@ -87,6 +87,5 @@ common_macros::pasitos!(fut_queue, run_for;
         } => sync {
             pasitos::data::stat_sync(res, tx)?;
         }
-
     }
 );

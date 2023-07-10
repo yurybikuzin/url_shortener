@@ -2,23 +2,6 @@ use super::*;
 
 use server::{resolve, shorten, stat};
 use std::collections::{HashMap, VecDeque};
-// use std::{fs, path::Path, sync::Arc};
-
-// use parquet::{
-//     file::{
-//         properties::WriterProperties,
-//         writer::SerializedFileWriter,
-//     },
-//     schema::parser::parse_message_type,
-// };
-
-// let path = Path::new("/path/to/sample.parquet");
-
-// let message_type = "
-//   message schema {
-//     REQUIRED INT32 b;
-//   }
-// ";
 
 // ==========================================================
 
@@ -32,7 +15,7 @@ pub async fn shorten(payload: shorten::Payload) -> ShortenResult {
         ret.push(chars[checksum % chars_len]);
         checksum /= chars_len;
     }
-    // TODO: save shortened url to persistent storage
+    // TODO: save shortened url to persistent storage (and update fast in-memory storage)
     SHORTENED.write().unwrap().insert(
         ret.clone(),
         Shortened {
@@ -52,7 +35,7 @@ pub fn shorten_sync(res: ShortenResult, tx: TxHandle) -> Result<()> {
 
 pub type ResolveResult = Result<Option<String>>;
 pub async fn resolve(payload: resolve::Payload) -> ResolveResult {
-    // TODO: save resolution to persistent storage
+    // TODO: save resolution stat to persistent storage (and update fast in-memory storage)
     Ok(
         if let Some(Shortened { url, stat }) =
             SHORTENED.write().unwrap().get_mut(&payload.shortened)
@@ -79,7 +62,7 @@ pub fn resolve_sync(res: ResolveResult, tx: TxHandle) -> Result<()> {
 
 pub type StatResult = Result<Option<Shortened>>;
 pub async fn stat(payload: stat::Payload) -> StatResult {
-    // TODO: save resolution to persistent storage
+    // TODO: get resolution stat from persistent storage (or from fast in-memory storage)
     Ok(SHORTENED
         .write()
         .unwrap()
@@ -120,7 +103,7 @@ lazy_static::lazy_static! {
         //     .chain(
         // ['/', '?'].into_iter()
         //     )
-        // CURL denie unmatched brackets in url  :
+        // CURL denie unmatched brackets in url:
         //     .chain(
         // ['[', ']'].into_iter()
         //     )
