@@ -13,8 +13,6 @@ async fn handler(
 ) -> actix_web::Result<impl Responder> {
     let headers = req.headers();
     let ip = headers.get("X-Real-IP");
-    let referer = headers.get("Referer");
-    debug!("ip: {ip:?}, referer: {referer:?}");
     payload.ip = ip.and_then(|val| {
         val.to_str().ok().and_then(|s| {
             IpAddr::from_str(s)
@@ -22,6 +20,8 @@ async fn handler(
                 .ok()
         })
     });
+    // We won't process the request here, as processing it can be expensive, so we'll send it to an internal queue, and after processing, we'll return the response to the user.
+    // If we tried to process the request right here, it could result in a DDOS broadcast to internal resources
     let (tx, mut rx) = tokio::sync::mpsc::channel::<ResponseMessage>(1);
     (TX.write().unwrap())
         .as_mut()
@@ -35,6 +35,6 @@ async fn handler(
                     .map(|url| Redirect::to(url).temporary())
             })
     } else {
-        Err(ServerError::FailedToRecieveResponse("shorten").into())
+        Err(ServerError::FailedToRecieveResponse("resolve").into())
     }
 }
